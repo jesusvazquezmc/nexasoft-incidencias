@@ -14,10 +14,12 @@ void main() {
       'cliente': 'Cliente ficticio',
       'categoria': 'Redes',
       'estado': 'Pendiente',
+      'prioridad': 'Media',
       'fecha': '2026-10-12',
     });
     expect(registro.id, 'INC-DEMO');
     expect(registro.toJson()['estado'], 'Pendiente');
+    expect(registro.toJson()['prioridad'], 'Media');
   });
 
   test('La búsqueda ignora mayúsculas y considera título y descripción', () {
@@ -30,15 +32,18 @@ void main() {
         cliente: 'Cliente 1',
         categoria: 'Redes',
         estado: 'Pendiente',
+        prioridad: 'Media',
         fecha: '2026-10-12',
       ),
       Incidencia(
         id: 'INC-2',
         titulo: 'Configuración de VPN',
-        descripcion: 'El personal remoto no puede establecer túnel de conexión seguro.',
+        descripcion:
+            'El personal remoto no puede establecer túnel de conexión seguro.',
         cliente: 'Cliente 2',
         categoria: 'Redes',
         estado: 'En proceso',
+        prioridad: 'Alta',
         fecha: '2026-10-13',
       ),
       Incidencia(
@@ -48,6 +53,7 @@ void main() {
         cliente: 'Cliente 3',
         categoria: 'Hardware',
         estado: 'Pendiente',
+        prioridad: 'Baja',
         fecha: '2026-10-14',
       ),
     ];
