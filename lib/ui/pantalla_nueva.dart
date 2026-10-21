@@ -93,6 +93,7 @@ class _PantallaNuevaState extends State<PantallaNueva> {
                       ? null
                       : (v) => setState(() => categoria = v ?? 'Software'),
                 ),
+                const SizedBox(height: 24),
                 DropdownButtonFormField<String>(
                   value: prioridad,
                   decoration: const InputDecoration(
